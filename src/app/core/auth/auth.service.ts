@@ -39,7 +39,7 @@ export class AuthService {
     }
 
     oAuthLogin(name: string, callback: any) {
-        return this.afAuth.auth.signInWithPopup(this.getProvider(name))
+        return this.afAuth.signInWithPopup(this.getProvider(name))
             .then(credential => {
                 callback();
                 this.updateUserData(credential.user);
@@ -56,7 +56,7 @@ export class AuthService {
     }
 
     signOut() {
-        this.afAuth.auth.signOut().then(() => this.router.navigate(['/']));
+        this.afAuth.signOut().then(() => this.router.navigate(['/']));
     }
 
     readUser() {

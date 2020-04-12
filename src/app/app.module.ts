@@ -1,4 +1,5 @@
 import { CdkTableModule } from '@angular/cdk/table';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
@@ -45,6 +46,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   imports: [
     AppRoutingModule,
+	AngularFireAuthModule,
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
